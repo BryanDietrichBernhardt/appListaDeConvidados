@@ -26,10 +26,10 @@
         var elBotao = document.getElementById("botao");
 
         elBotao.onclick = function() {
-            var vName = elNome.value; //armazena o valor do campo nomes na var nome
-            var vAge = elIdade.value;
-            var vCPF = elCPF.value;
-            convidados.push({name: vName, age: vAge, CPF:vCPF}); // adiciona o valor do var Nome nos convidados
+            var name = elNome.value; //armazena o valor do campo nomes na var nome
+            var age = elIdade.value;
+            var CPF = elCPF.value;
+            convidados.push({name: name, age: age, CPF:CPF}); // adiciona o valor do var Nome nos convidados
             elNome.value = ""; // limpa o campo
             elIdade.value = "";
             elCPF.value = "";
