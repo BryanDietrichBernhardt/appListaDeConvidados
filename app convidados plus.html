@@ -22,14 +22,14 @@
         var elLista = document.getElementById("lista");
         var elNome = document.getElementById("name");
         var elIdade = document.getElementById("age");
-        var ElCPF = document.getElementById("cpf");
+        var elCPF = document.getElementById("cpf");
         var elBotao = document.getElementById("botao");
 
         elBotao.onclick = function() {
-            var name = elNome.value; //armazena o valor do campo nomes na var nome
-            var age = elIdade.value;
-            var CPF = ElCPF.value;
-            convidados.push({name: name, age: age, CPF:CPF}); // adiciona o valor do var Nome nos convidados
+            var vName = elNome.value; //armazena o valor do campo nomes na var nome
+            var vAge = elIdade.value;
+            var vCPF = elCPF.value;
+            convidados.push({name: vName, age: vAge, CPF:vCPF}); // adiciona o valor do var Nome nos convidados
             elNome.value = ""; // limpa o campo
             elIdade.value = "";
             elCPF.value = "";
