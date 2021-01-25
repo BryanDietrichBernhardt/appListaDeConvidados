@@ -31,6 +31,8 @@
             var CPF = ElCPF.value;
             convidados.push({name: name, age: age, CPF:CPF}); // adiciona o valor do var Nome nos convidados
             elNome.value = ""; // limpa o campo
+            elIdade.value = "";
+            elCPF.value = "";
 
             salvarConvidados();
             listarConvidados();
