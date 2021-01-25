@@ -47,9 +47,9 @@
 
             for(const convidado of convidados){ //cria variavel convidado armazenando todos os convidados, const faz variavel voltar do inicio depois do for para n ficar travado no ultimo elemento
                 var elConvidado = document.createElement("li"); // cria um elemento em html
-                var elNome = document.createTextNode(convidado.name); // cria um elemento de texto contendo o nome de cada convidado
-                var elIdade = document.createTextNode(convidado.age);
-                var elCPF = document.createTextNode(convidado.CPF);
+                var elNome = document.createTextNode("Nome: "+convidado.name); // cria um elemento de texto contendo o nome de cada convidado
+                var elIdade = document.createTextNode(" | Idade: "+convidado.age);
+                var elCPF = document.createTextNode(" | CPF: "+convidado.CPF + " ");
 
                 var elExcluir = document.createElement("a"); // cria elemento do tipo 'a' (link)
                 elExcluir.setAttribute("href","#"); // atribui link clicavel
