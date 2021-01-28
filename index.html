@@ -1,68 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Lista de Convidados</title>
-    </head>
-    <body>
-        <div id="app">
-            <h1>Lista de Convidados</h1>
-            <ul id="lista"></ul>
+<head>
+</head>
+<body>
+    <div id="app">
+        <h1>Lista de Convidados</h1>
+        <ul id="lista"></ul>
 
-            <input id="campo" type="text" placeholder="Digite o nome do convidado"/>
-            <button id="botao">Cadastrar</button>
-        </div>
-        <script type="text/javascript">
-        var convidados = JSON.parse(localStorage.getItem("convidados")) || []; // transforma "convidados" do armazenamento local do navegador em objeto e salva dentro do "convidados", ou se eles estiverem nulos, cria um array vazio
+        <input type="text" id="name" placeholder="Digite o nome do convidado"/>
+        <input type="text" id="age" placeholder="Digite a idade do convidado"/>
+        <input type="text" id="cpf" placeholder="Digite o CPF do convidado"/>
+        <button id="botao">Cadastrar</button>
+    </div>
 
-        // document.getElementByClass('lista')
-        // document.getElementById('#lista')
-        // document.querySelector('#lista li')
-        var elLista = document.getElementById("lista");
-        var elCampo = document.getElementById("campo");
-        var elBotao = document.getElementById("botao");
-
-        elBotao.onclick = function() {
-            var nome = elCampo.value; //armazena o valor do campo na var nome
-            convidados.push({nome: nome}); // adiciona o valor do var Nome nos convidados
-            elCampo.value = ""; // limpa o campo
-
-            salvarConvidados();
-            listarConvidados();
-        } //quando clicar no botao, chama a funcao para adicionar convidado
-
-        function salvarConvidados() {
-            localStorage.setItem("convidados", JSON.stringify(convidados)); // transforma "convidados" em string e salva dentro do armazenamento local do navegador"
-        }
-
-        function listarConvidados(){
-            elLista.innerHTML = "";
-
-            for(const convidado of convidados){ //cria variavel convidado armazenando todos os convidados, const faz variavel voltar do inicio depois do for para n ficar travado no ultimo elemento
-                var elConvidado = document.createElement("li"); // cria um elemento em html
-                var elNome = document.createTextNode(convidado.nome); // cria um elemento de texto contendo o nome de cada convidado
-
-                var elExcluir = document.createElement("a"); // cria elemento do tipo 'a' (link)
-                elExcluir.setAttribute("href","#"); // atribui link clicavel
-                elExcluir.onclick = function() {
-                    convidados = convidados.filter(function(item) {
-                        return item.nome !== convidado.nome; //retorna todos os itens, menos o clicado
-                    });
-
-                    salvarConvidados()
-                    listarConvidados();
-                };
-
-                var elExcluirTexto = document.createTextNode("Excluir"); // cria o texto "excluir"
-
-                elExcluir.appendChild(elExcluirTexto); // coloca o elemento elExcluirTexto dentro do elExcluir
-                elConvidado.appendChild(elNome); // coloca o elemento elNome dentro do elConvidado
-                elConvidado.appendChild(elExcluir); // coloca o elemento elExcluir dentro do elConvidado
-                elLista.appendChild(elConvidado) // coloca o elemento elConvidado dentro do elLista
-            }
-        }
-
-        listarConvidados();
-
-        </script>
-    </body>
+    <script src="./bundle.js" type="application/javascript"></script>
+</body>
 </html>
